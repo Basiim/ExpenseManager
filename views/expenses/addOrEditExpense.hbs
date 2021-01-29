@@ -1,0 +1,19 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/expenses/addOrEditExpense" method="POST" autocomplete="off">
+    <div class="form-row">
+        <input type="hidden" name="_id" value="{{expenses._id}}">
+        <div class="form-group col-md-6">
+            <label>Expense Type</label>
+            <input type="text" class="form-control" name="expenseType" placeholder="Type" value="{{expenses.expenseType}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Amount</label>
+            <input type="text" class="form-control" name="expenseAmount" placeholder="Amount" value="{{expenses.expenseAmount}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info">Add Expense</button>
+        <a href="/expenses/list" class="btn btn-secondary"><i class="fa fa-list-alt"></i> View Expenses</a>
+    </div>
+</form>
