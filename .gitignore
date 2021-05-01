@@ -2,3 +2,4 @@
 /backup/
 /models/db.js/
 package-lock.json
+.env
