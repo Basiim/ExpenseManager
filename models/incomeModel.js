@@ -10,6 +10,9 @@ var incomeSchema = new mongoose.Schema({
     },
     incomeAmount: {
         type: Number
+    },
+    incomeDate: {
+        type: Date
     }
 });
 

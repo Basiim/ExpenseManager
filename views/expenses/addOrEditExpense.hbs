@@ -1,19 +1,44 @@
-<h3>{{viewTitle}}</h3>
 
-<form action="/expenses/addOrEditExpense" method="POST" autocomplete="off">
-    <div class="form-row">
-        <input type="hidden" name="_id" value="{{expenses._id}}">
-        <div class="form-group col-md-6">
-            <label>Expense Type</label>
-            <input type="text" class="form-control" name="expenseType" placeholder="Type" value="{{expenses.expenseType}}">
+<div class="e-main">
+    <div class="nav">
+        <div>
+            <a href="#" class="nav-logo">Expense Manager</a>
         </div>
-        <div class="form-group col-md-6">
-            <label>Amount</label>
-            <input type="text" class="form-control" name="expenseAmount" placeholder="Amount" value="{{expenses.expenseAmount}}">
+        <div class="nav-list">
+            <li class="navItem"><a href="/expenses/list" class="navLink active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="navItem"><a href="/incomes/addIncome" class="navLink"><i class="fa fa-plus" aria-hidden="true"></i> Add Income</a></li>
+            <li class="navItem"><a href="/expenses/add" class="navLink"><i class="fa fa-plus" aria-hidden="true"></i> Add Expense</a></li>
+            <li class="navItem"><a href="/expenses/profile" class="navLink"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+            <li class="navItem"><a href="/login" class="navLink"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
         </div>
     </div>
-    <div class="form-group">
-        <button class="btn btn-info">Add Expense</button>
-        <a href="/expenses/list" class="btn btn-secondary"><i class="fa fa-list-alt"></i> View Expenses</a>
+    <div class="info">
+        <h3>{{viewTitle}}</h3>
+        <form action="/expenses/addOrEditExpense" method="POST" autocomplete="off">
+            <div class="form-row">
+                <input type="hidden" name="_id" value="{{expenses._id}}">
+                <div class="form-group col-md-6">
+                    <label>Expense Type</label>
+                    <select class="custom-select mb-3" name="expenseType" placeholder="Type" value="{{expenses.expenseType}}">
+                        <option value="Bills">Bills</option>
+                        <option value="Grocery">Grocery</option>
+                        <option value="Fees">Fees</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Amount</label>
+                    <input type="text" class="form-control" name="expenseAmount" placeholder="Amount" value="{{expenses.expenseAmount}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Date</label>
+                    <input id="expenDate" type="date" class="form-control" name="expenseDate" value="{{expenses.expenseDate}}" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31">
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info">Add Expense</button>
+                <a href="/expenses/list" class="btn btn-secondary"><i class="fa fa-list-alt"></i> View Expenses</a>
+            </div>
+        </form>
     </div>
-</form>
+</div>

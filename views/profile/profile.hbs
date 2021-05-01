@@ -1,0 +1,20 @@
+<div class="e-main">
+    <div class="nav">
+        <div>
+            <a href="#" class="nav-logo">Expense Manager</a>
+        </div>
+        <div class="nav-list">
+            <li class="navItem"><a href="/expenses/list" class="navLink active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="navItem"><a href="/incomes/addIncome" class="navLink"><i class="fa fa-plus" aria-hidden="true"></i> Add Income</a></li>
+            <li class="navItem"><a href="/expenses/add" class="navLink"><i class="fa fa-plus" aria-hidden="true"></i> Add Expense</a></li>
+            <li class="navItem"><a href="/expenses/profile" class="navLink"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+            <li class="navItem"><a href="/login" class="navLink"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        </div>
+    </div>
+    <div class="info">
+        <h3 style="margin-bottom: 70px;">{{viewTitle}}</h3>
+        <h5>UserID: {{profileList.userID}}</h5>
+        <h5>Name: {{profileList.name}}</h5>
+        <h5>Email: {{profileList.Email}}</h5>
+    </div>
+</div>

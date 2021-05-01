@@ -1,67 +1,189 @@
-<h3>Welcome {{name}}</h3>
-<p>User ID: {{id}}</p>
-<div class="row"><div class="col-md-6"><h4> Expenses List</h4><br>
-</div>
-<div class="col-md-6"><h4> Income List</h4></div>
-<div class="row">
+<!--<div class="row" style="background-color: aliceblue; margin-top: 50px; padding: 20px;">
+    <ul class="nav flex-column" style="background-color: rgb(202, 202, 202, 0.2); margin-top: 50px; padding: 20px;">
+        <li class="nav-item">
+            <h4 class="nav-brand" href="#">Expense Manager</h4>
+        </li>
+        <li class="nav-item">
+            <h5>Welcome {{name}}</h5>
+            <p>User ID: {{id}}</p>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/expenses/add">Add Expense</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/incomes/addIncome">Add Income</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Logout</a>
+        </li>
+    </ul>
+
+    <div class="row"><div class="col-md-6"><h4> Expenses List</h4><br>
     </div>
-    <table class="table table-striped col-md-6">
-        <thead>
-            <tr>
-                <th>Expense Type</th>
-                <th>Expense Amount</th>
-                <th><a href="/expenses/add" class="btn btn-outline-primary"><i class="fa fa-plus"></i></a></th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each expList}}
-            <tr>
-                <td>{{this.expenseType}}</td>
-                <td>{{this.expenseAmount}}</td>
-                <td>
-                    <a href="/expenses/editexp/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                    <a href="/expenses/deleteexp/{{this.id}}" onclick="confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
-                </td>
-            </tr>
-            {{/each}}
-            <tr>
-                <td style="font-weight: bold;">Total Expenses: </td>
-                <td style="font-weight: bold;">{{expense}}</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="col-md-6"><h4> Income List</h4></div>
+    <div class="row">
+        </div>
+        <table class="table table-striped col-md-6">
+            <thead>
+                <tr>
+                    <th>Expense Type</th>
+                    <th>Expense Amount</th>
+                    <th><a href="/expenses/add" class="btn btn-outline-primary"><i class="fa fa-plus"></i></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each expList}}
+                <tr>
+                    <td>{{this.expenseType}}</td>
+                    <td>{{this.expenseAmount}}</td>
+                    <td>
+                        <a href="/expenses/editexp/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                        <a href="/expenses/deleteexp/{{this.id}}" onclick="confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td style="font-weight: bold;">Total Expenses: </td>
+                    <td style="font-weight: bold;">{{expense}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <!-- Income -->
+        <!-- Income -->
 
-    <table class="table table-striped col-md-6">
-        <thead>
-            <tr>
-                <th>Income Type</th>
-                <th>Income Amount</th>
-                <th><a href="/incomes/addIncome" class="btn btn-outline-primary"><i class="fa fa-plus"></i></a></th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each incList}}
-            <tr>
-                <td>{{this.incomeType}}</td>
-                <td>{{this.incomeAmount}}</td>
-                <td>
-                    <a href="/incomes/editinc/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                    <a href="/incomes/deleteinc/{{this.id}}" onclick="confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
-                </td>
-            </tr>
-            {{/each}}
-            <tr>
-                <td style="font-weight: bold;">Total Income: </td>
-                <td style="font-weight: bold;">{{income}}</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+        <!--<table class="table table-striped col-md-6">
+            <thead>
+                <tr>
+                    <th>Income Type</th>
+                    <th>Income Amount</th>
+                    <th><a href="/incomes/addIncome" class="btn btn-outline-primary"><i class="fa fa-plus"></i></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each incList}}
+                <tr>
+                    <td>{{this.incomeType}}</td>
+                    <td>{{this.incomeAmount}}</td>
+                    <td>
+                        <a href="/incomes/editinc/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                        <a href="/incomes/deleteinc/{{this.id}}" onclick="confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td style="font-weight: bold;">Total Income: </td>
+                    <td style="font-weight: bold;">{{income}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div class="row">
 <h3 class="col-md-6">Balance: <span style="color: rgb(11, 122, 11);">{{balance}}</span></h3>
     <a href="/login" class="btn btn-info">Logout</a>
+</div>-->
+<div class="e-main">
+    <div class="nav">
+        <div>
+            <a href="#" class="nav-logo">Expense Manager</a>
+        </div>
+        <div class="nav-list">
+            <li class="navItem"><a href="/expenses/list" class="navLink active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="navItem"><a href="/incomes/addIncome" class="navLink"><i class="fa fa-plus" aria-hidden="true"></i> Add Income</a></li>
+            <li class="navItem"><a href="/expenses/add" class="navLink"><i class="fa fa-plus" aria-hidden="true"></i> Add Expense</a></li>
+            <li class="navItem"><a href="/expenses/profile" class="navLink"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+            <li class="navItem"><a href="/login" class="navLink"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        </div>
+    </div>
+    <div class="info">
+        <h3 style="margin-bottom: 30px;">Welcome {{name}}</h3>
+        <div class="col-md-6"><h4> Expenses List</h4><br></div>
+            <div class="table-wrapper">
+            <table class="table col-md-12">
+                <thead>
+                    <tr>
+                        <th>Expense Type</th>
+                        <th>Expense Amount</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each expList}}
+                    <tr>
+                        <td>{{this.expenseType}}</td>
+                        <td>{{this.expenseAmount}}</td>
+                        <td>{{this.expenseDate}}</td>
+                        <td>
+                            <a href="/expenses/editexp/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                            <a href="/expenses/deleteexp/{{this.id}}" onclick="confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                <!--<tfoot>
+                    <tr>
+                        <td style="font-weight: bold;">Total Expenses: </td>
+                        <td style="font-weight: bold;">{{expense}}</td>
+                        <td></td>
+                    </tr>
+                </tfoot>-->
+            </table>
+            </div>
+            <!-- Income -->
+            <div class="col-md-6"><h4> Income List</h4></div>
+            <div class="table-wrapper">
+            <table class="table col-md-12">
+                <thead>
+                    <tr>
+                        <th>Income Type</th>
+                        <th>Income Amount</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each incList}}
+                    <tr>
+                        <td>{{this.incomeType}}</td>
+                        <td>{{this.incomeAmount}}</td>
+                        <td>{{this.incomeDate}}</td>
+                        <td>
+                            <a href="/incomes/editinc/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                            <a href="/incomes/deleteinc/{{this.id}}" onclick="confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                <!--<tfoot>
+                    <tr>
+                        <td style="font-weight: bold;">Total Income: </td>
+                        <td style="font-weight: bold;">{{income}}</td>
+                        <td></td>
+                    </tr>
+                </tfoot>-->
+            </table>
+            </div>
+        <div class="row">
+            <table class="table col-md-6">
+                <tfoot>
+                    <tr>
+                        <td style="font-weight: bold;">Total Income: </td>
+                        <td style="font-weight: bold;">{{income}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Total Expenses: </td>
+                        <td style="font-weight: bold;">{{expense}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Balance: </td>
+                        <td style="font-weight: bold;"><span style="color: rgb(11, 122, 11);">{{balance}}</span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
 </div>
+

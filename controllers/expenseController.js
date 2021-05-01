@@ -11,6 +11,7 @@ var expen = [],
     inco = [];
 var ID, dispName;
 var isLoggedIn = 0;
+var userDetails;
 /// Home page
 router.get('/', (req, res) => {
     isLoggedIn = 0;
@@ -56,15 +57,15 @@ function newUser(req, res) {
     u.Email = req.body.Email;
     u.password = req.body.password;
     u.userID = Math.floor((Math.random() * 1000) + 1);
-    console.log(u);
     ID = u.userID;
     isLoggedIn = 1;
     u.save((err, doc) => {
         if (!err) {
-            isLoggedIn = 1;
+            res.redirect('/login');
+            /*isLoggedIn = 1;
             totalExpenses(req, res);
             getData(req, res);
-            renderList(req, res);
+            renderList(req, res);*/
             //res.redirect('/expenses/list');
         } else
             console.log('Error ' + err);
@@ -76,11 +77,11 @@ function login(req, res) {
         var k = 0;
         if (isLoggedIn == 0)
             while (docs[k]) {
-                if (docs[k].userID == req.body.userID) {
+                if (docs[k].Email == req.body.Email) {
                     if (docs[k].password == req.body.password) {
                         /// Load User Data
                         isLoggedIn = 1;
-                        ID = req.body.userID;
+                        ID = docs[k].userID;
                         dispName = docs[k].name;
                         getData(req, res);
                         res.redirect('/expenses/list');
@@ -189,6 +190,7 @@ function insertExpense(req, res) {
     var e = new Expenses();
     e.expenseType = req.body.expenseType;
     e.expenseAmount = req.body.expenseAmount;
+    e.expenseDate = req.body.expenseDate;
     e.userID = ID;
     e.save((err, doc) => {
         if (!err) {
@@ -251,6 +253,7 @@ function insertIncome(req, res) {
     var i = new Income();
     i.incomeType = req.body.incomeType;
     i.incomeAmount = req.body.incomeAmount;
+    i.expenseDate = req.body.expenseDate;
     i.userID = ID;
     i.save((err, doc) => {
         if (!err)
@@ -304,5 +307,50 @@ function updateIncomeRecord(req, res) {
             console.log('Error Editing');
     });
 }
+/*********** Profile ************/
+router.get('/profile', (req, res) => {
+    User.find((err, docs) => {
+        if (isLoggedIn == 1) {
+            expen = [];
+            inco = [];
+            getUserData(req, res);
+            /// Rendring list
+            renderUserList(req, res);
+        } else
+            res.render('login/login', {
+                viewTitle: 'Login',
+                error: 'Not logged in'
+            });
+    });
+});
 
+function getUserData(req, res) {
+    User.find((err, docs) => {
+        if (!err) {
+            var k = 0;
+            var i = 0;
+            while (docs[k]) {
+                if (docs[k].userID == ID) {
+                    userDetails = docs[k];
+                    i++;
+                }
+                k++;
+            }
+        } else
+            console.log("Error " + err);
+    });
+}
+
+function renderUserList(req, res) {
+    Income.find((err, docs) => {
+        totalBal = totalInc - totalExp;
+        if (!err) {
+            res.render("profile/profile", {
+                profileList: userDetails,
+                viewTitle: "Profile"
+            });
+        } else
+            console.log("Error " + err);
+    });
+}
 module.exports = router;

@@ -10,6 +10,9 @@ var expensesSchema = new mongoose.Schema({
     },
     expenseAmount: {
         type: Number
+    },
+    expenseDate: {
+        type: Date
     }
 });
 

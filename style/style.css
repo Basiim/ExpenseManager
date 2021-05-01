@@ -1,0 +1,104 @@
+h3 {
+    font-weight: 600;
+}
+
+h4 {
+    font-style: italic;
+}
+
+.nav {
+    background-color: white;
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    flex-direction: column;
+    width: 25%;
+    padding: 30px;
+    border-right: 2px groove;
+}
+
+.info {
+    background-color: rgb(250, 251, 253);
+    width: 100%;
+    padding: 30px;
+}
+
+.e-main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: rgb(76, 80, 101);
+    font-weight: 600;
+    height: 100%;
+}
+
+.bal {
+    position: absolute;
+    top: 94%;
+    left: 23%;
+}
+
+.nav-logo {
+    color: rgb(76, 80, 101);
+    font-size: 1.5rem;
+}
+
+.nav-logo:hover {
+    color: rgb(76, 80, 101);
+    text-decoration: none;
+}
+
+.navItem {
+    padding-top: 1rem;
+    font-weight: 600;
+}
+
+.navLink:hover {
+    text-decoration: none;
+}
+
+
+/***** Table *****/
+
+.table-wrapper {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    width: 50%;
+    height: 309px;
+    margin-bottom: 20px;
+}
+
+.table-wrapper thead {
+    position: sticky;
+    top: 0;
+}
+
+table {
+    border-radius: 50px;
+    overflow: auto;
+    padding: 1rem;
+}
+
+thead {
+    background-color: rgb(250, 251, 253);
+    color: rgb(76, 80, 101);
+    border-bottom: 0.5px;
+    border-top: 0.5px;
+}
+
+tbody {
+    color: black;
+}
+
+tfoot {
+    color: black;
+    font-size: 18px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}

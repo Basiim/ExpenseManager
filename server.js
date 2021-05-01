@@ -14,11 +14,10 @@ app.use(bodyparser.urlencoded({
     extended: true
 }));
 app.use(bodyparser.json());
-
-
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'mainLayout', layoutsDir: __dirname + '/views/layouts', handlebars: allowInsecurePrototypeAccess(Handlebars) }));
 app.set('view engine', 'hbs');
+app.use("/style", express.static(__dirname + "/style/"));
 /// Starting server
 app.listen(3000, () => {
     console.log('Server started at port 3000');
