@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/ExpenseDB', { useNewUrlParser: true }, (err) => {
+/*mongoose.connect('mongodb://localhost:27017/ExpenseDB', { useNewUrlParser: true }, (err) => {
+    if (!err) console.log("Connection Successful");
+    else console.log("Error: " + err);
+});*/
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, (err) => {
     if (!err) console.log("Connection Successful");
     else console.log("Error: " + err);
 });
