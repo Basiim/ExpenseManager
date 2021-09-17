@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
     if (!err) console.log("Connection Successful");
     else console.log("Error: " + err);
 });*/
-mongoose.connect(`mongodb+srv://Basim:7VVmKuPeQheHuAD@expense-manager.knex1.mongodb.net/expense-manager?retryWrites=true&w=majority`, { useNewUrlParser: true }, (err) => {
+mongoose.connect(`mongodb+srv://Basim:7VVmKuPeQheHuAD@expense-manager.knex1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true }, (err) => {
     if (!err) console.log("Connection Successful");
     else console.log("Error: " + err);
 });
